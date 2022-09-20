@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Alexa's Portofolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/02c1f905dd.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+
+            <nav>
+                <img src="images/logo3.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                        <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>College freshman</p>
+                <h1>Hi, I'm <span class="text">Aleksa</span> <span class="full-text">from Serbia</span> <span class="short-text">from Serbia</span></h1>
+            </div>
+        </div>
+
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/testa.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac mollis velit. Duis ac porta
+                        nibh. Pellentesque et orci convallis, tincidunt nibh volutpat, lacinia lectus. Pellentesque
+                        tincidunt, lacus ac blandit ornare, libero leo finibus leo, quis dapibus turpis nisl commodo
+                        nulla. Donec a orci magna. Vivamus quam eros, eleifend vel magna eu, aliquam lobortis nibh. Duis
+                        vulputate imperdiet turpis at ullamcorper. Nam vel velit sem. In quam augue, cursus a dui ut,
+                        lacinia placerat dui. Quisque mattis, ex sed cursus sollicitudin, elit libero consectetur orci,
+                        vitae venenatis urna mi vel risus. Nunc nulla mauris, lobortis egestas dignissim sit amet,
+                        vestibulum non velit. Praesent ipsum erat, fermentum in sem feugiat, semper imperdiet arcu.
+                        Donec ultrices nisi tempor neque commodo finibus. Sed in laoreet augue. Nam quis enim nisl.
+                        Etiam tincidunt mollis venenatis.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('languages')">Languages</p>
+                        <p class="tab-links" onclick="opentab('experiance')">Experiance</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="languages">
+                        <ul>
+                            <li><span class="lang">C</span><br></li>
+                            <li><span class="lang">C#</span><br></li>
+                            <li><span class="lang">Python</span><br></li>
+                            <li><span class="lang">Javascript/HTML/CSS</span><br></li>
+
+                        </ul>
+                        </div>
+                        <div class="tab-contents" id="experiance">
+                            <ul>
+                                <li><span class="lang">2022 May - Current</span><br>NativeCamp English tutor<br></li>
+
+                                <li><span class="lang">Programming</span><br>For all my projects feel free to<br> checkout my GitHub profile!</li>
+
+
+
+                            </ul>
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span class="lang">2018-2022</span><br>Electrical Engineering School "Nikola Tesla" (specialized High-School)</li>
+                                    <li><span class="lang">2021 January - 2021 June</span><br> IT essentials certificate CISCO</li>
+                                  
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p> <i class="fa-solid fa-paper-plane"></i> contact@example.com</p>
+                        <p><i class="fa-solid fa-phone"></i> 0123456789</p>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/eal_ska/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.snapchat.com/add/ealska1?share_id=ocunoGksms8&locale=en-US"><i class="fa-brands fa-snapchat"></i></a>
+
+
+                        </div>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your name" required>
+                            <input type="text" name="Email" placeholder="Your email" required>
+                            <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <script>
+                var tablinks = document.getElementsByClassName("tab-links");
+                var tabcontents =  document.getElementsByClassName("tab-contents");
+                function opentab(tabname){
+                    for(tablink of tablinks)
+                    {
+                        tablink.classList.remove("active-link");
+                    }
+                    for(tabcontent of tabcontents)
+                    {
+                        tabcontent.classList.remove("active-tab");
+                    }
+                    event.currentTarget.classList.add("active-link");
+                    document.getElementById(tabname).classList.add("active-tab");
+                }
+            </script>
+            <script>
+                var sidemenu = document.getElementById("sidemenu");
+                function openmenu(){
+                    sidemenu.style.right = "0";
+                }
+                function closemenu(){
+                    sidemenu.style.right = "-200px";
+                }
+            </script>
+            <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxGGk8o7cNfTy_lS-y8yQh-7VCdZ_hzg-Uv3UBiYGTA_iYF-b3PQKFYc8EgkfQD59E5/exec'
+                const form = document.forms['submit-to-google-sheet']
+                const msg = document.getElementById("msg")
+                form.addEventListener('submit', e => {
+                  e.preventDefault()
+                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => {msg.innerHTML = " Your message has been succesefully sent!"
+                    setTimeout(function(){msg.innerHTML=""},5000)})
+                    form.reset()
+                    .catch(error => console.error('Error!', error.message))
+                })
+              </script>
+</body>
+
+</html>
